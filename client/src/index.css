@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+@layer base {
+  .sidebar-top {
+    border-radius: 3px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 50%;
+    font-size: 19px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.2s ease;
+  }
+
+  .sidebar-top:hover {
+    background-color: #eee;
+  }
+
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .sidebar-item.active {
+    background-color: rgb(216, 237, 255);
+  }
+
+  .sidebar-item:not(.active):hover {
+    background-color: #eee;
+  }
+
+  .chat {
+    max-width: 350px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    word-break: keep-all;
+  }
+
+  .incoming-chat {
+    background-color: #eee;
+  }
+
+  .outgoing-chat {
+    color: white;
+    align-self: flex-end;
+    @apply bg-gradient-to-r from-sky-500 to-indigo-500;
+  }
+
+  .input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    outline: none;
+    background-color: #eee;
+  }
+
+  .pw-input {
+    padding-right: 40px;
+  }
+
+  .auth-btn {
+    padding: 10px 20px;
+    color: white;
+    border-radius: 10px;
+    @apply bg-gradient-to-r from-sky-500 to-indigo-500;
+  }
+
+  .alert-box {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    padding: 7px 12px;
+    border-radius: 5px;
+    transform: translateX(-400px);
+    opacity: 0;
+    pointer-events: none;
+    background-color: white;
+    @apply shadow-btn transition-alert duration-200;
+  }
+
+  .alert-box.show {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
